@@ -133,5 +133,5 @@ Here are some screenshots illustrating the various features and user interfaces 
 
 ### Manager User Interface
 
-#### Manager Flat Offers Inquiry
+#### Manager Flat Offers 
 ![Manager Flat Offers Inquiry](screenshots/ManagerFlatoffers.png)
