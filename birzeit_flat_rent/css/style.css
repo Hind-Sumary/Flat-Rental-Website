@@ -1,0 +1,734 @@
+/* Birzeit Flat Rent - Main Stylesheet (Pink Theme) */
+
+/* General Styles */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffe5ec;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+/* Header and Navigation */
+header {
+    background-color: #fb6f92;
+    color: #fff;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* --- ADD THESE PROPERTIES --- */
+    margin-left: 230px; /* Pushes the header past the 200px nav + 30px padding/gap */
+    width: calc(100% - 230px); /* Occupy the remaining width */
+    position: relative; /* Establishes a stacking context for z-index if needed */
+    z-index: 1; /* Ensures it's above other normal flow content, but below nav if any overlap occurs */
+}
+
+header h1 {
+    margin: 0;
+    padding: 0;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+}
+
+header img {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px; 
+    height: 100%;
+    background-color: #fb6f92;
+    padding: 1rem;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure nav is on top */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+
+nav li {
+    margin-bottom: 10px;
+}
+
+nav a {
+    color: #ffe5ec;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    display: block; /* Make the whole area clickable */
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #ff8fab;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+    margin-left: 230px; /* Adjust based on nav width + padding */
+}
+
+.container {
+    /* margin-left: 220px; This is now handled by main */
+    padding: 1rem;
+}
+
+.content-wrapper {
+    display: flex; /* Or display: grid; with grid-template-columns */
+    gap: 20px; /* Or whatever spacing you want between sidebar and content */
+    /* You might want to add padding to this wrapper if main's padding isn't enough */
+}
+
+.main-page-content {
+    flex-grow: 1; /* Allows the main content to take up remaining space */
+}
+
+/* Forms */
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+fieldset {
+    border: 1px solid #ffc2d1;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 10px;
+    color: #fb6f92;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+input[type="url"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ffc2d1;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+button, 
+input[type="submit"] {
+    background-color: #ff8fab;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover, 
+input[type="submit"]:hover {
+    background-color: #fb6f92;
+}
+
+button[disabled] {
+    background-color: #ffc2d1;
+    cursor: not-allowed;
+}
+
+/* Tables */
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.results-table th, 
+.results-table td {
+    padding: 15px 18px;
+    text-align: left;
+    border: 1px solid #ffc2d1;
+}
+
+.results-table th {
+    background-color: #ff8fab;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+}
+
+.results-table th a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.results-table tbody tr:nth-child(even) {
+    background-color: #fff0f5;
+}
+
+.results-table tbody tr:hover {
+    background-color: #ffe5ec;
+}
+
+/* Button-like links */
+.button-link {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #ff8fab;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.button-link:hover {
+    background-color: #fb6f92;
+}
+
+/* Rental status */
+.status-current {
+    background-color: #d4edda !important;
+}
+
+.status-past {
+    background-color: #f8f9fa !important;
+    color: #6c757d;
+}
+
+/* ===== ENHANCED FLAT DETAIL PAGE STYLES ===== */
+
+/* Main flat detail container - updated for better layout */
+.flat-detail-container {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Marketing info sidebar - updated styling */
+.marketing-info {
+    flex: 0 0 200px;
+    background: #ffc2d1;
+    border: 1px solid #ffb3c6;
+    padding: 15px;
+    border-radius: 5px;
+    height: fit-content;
+}
+
+.marketing-info h4, 
+.marketing-info h5 {
+    color: #fb6f92;
+    margin-top: 0;
+}
+
+.marketing-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.marketing-info li {
+    margin-bottom: 8px;
+}
+
+.marketing-info a {
+    color: #fb6f92;
+    text-decoration: none;
+    padding: 5px 8px;
+    border-radius: 3px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.marketing-info a:hover {
+    background-color: #ff8fab;
+    color: white;
+}
+
+/* Main flat card - updated for better flex layout */
+.flatcard {
+    flex: 1;
+    display: flex;
+    gap: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+
+/* Photo section */
+.flat-photos {
+    flex: 0 0 400px;
+}
+
+.flat-photos h4 {
+    color: #fb6f92;
+    margin-top: 0;
+    border-bottom: 2px solid #ffc2d1;
+    padding-bottom: 10px;
+}
+
+.photo-gallery {
+    margin-bottom: 20px;
+}
+
+.photo-container {
+    margin-bottom: 15px;
+    position: relative;
+    border: 1px solid #ffc2d1;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.flat-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.primary-photo-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(251, 111, 146, 0.9);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.photo-description {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 10px;
+    font-style: italic;
+}
+
+.photo-info {
+    display: block;
+    padding: 5px 10px;
+    background: #fff0f5;
+    color: #666;
+    font-size: 11px;
+    border-top: 1px solid #ffc2d1;
+}
+
+.photo-summary {
+    background: #fff0f5;
+    border: 1px solid #ffc2d1;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.photo-summary p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* No photos state */
+.no-photos {
+    text-align: center;
+    padding: 20px;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    color: #721c24;
+}
+
+.debug-info {
+    background: #d1ecf1;
+    border: 1px solid #bee5eb;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 15px;
+    text-align: left;
+}
+
+.debug-info h5 {
+    margin-top: 0;
+    color: #0c5460;
+}
+
+.debug-info ul {
+    margin: 5px 0;
+    padding-left: 20px;
+}
+
+/* Flat description section */
+.flat-description {
+    flex: 1;
+}
+
+.flat-description h3 {
+    color: #fb6f92;
+    margin-top: 0;
+    border-bottom: 2px solid #ffc2d1;
+    padding-bottom: 10px;
+}
+
+.flat-description p {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.flat-description strong {
+    color: #fb6f92;
+}
+
+/* Information sections */
+.availability-info, 
+.additional-features, 
+.owner-info {
+    margin-top: 20px;
+    padding: 15px;
+    background: #fff0f5;
+    border: 1px solid #ffc2d1;
+    border-radius: 5px;
+}
+
+.availability-info h4, 
+.additional-features h4, 
+.owner-info h4 {
+    color: #fb6f92;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.additional-features ul {
+    list-style: none;
+    padding: 0;
+}
+
+.additional-features li {
+    padding: 5px 0;
+    border-bottom: 1px solid #ffc2d1;
+}
+
+.additional-features li:last-child {
+    border-bottom: none;
+}
+
+.additional-features li:before {
+    content: "✓ ";
+    color: #fb6f92;
+    font-weight: bold;
+}
+
+/* Status indicators */
+.status-available {
+    color: #28a745;
+    font-weight: bold;
+    background: #d4edda;
+    padding: 3px 8px;
+    border-radius: 3px;
+}
+
+.status-rented {
+    color: #dc3545;
+    font-weight: bold;
+    background: #f8d7da;
+    padding: 3px 8px;
+    border-radius: 3px;
+}
+
+/* Side navigation*/
+.side-navigation {
+    /* Keep your existing styles */
+    flex: 0 0 200px; /* This property is for flex containers, not fixed positioning */
+    background-color: #fff;
+    border: 1px solid #ffc2d1;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 130px;
+    margin-left: 40px;
+    height: fit-content; /* Or height: 100%; if it should fill the screen */
+
+    /* --- ADD THESE PROPERTIES --- */
+    position: fixed; /* Make it fixed */
+    top: 100; /* Align to the top */
+    left: 200px; /* Position it immediately to the right of your 200px wide 'nav' */
+    /* Or left: 230px; if you want a 30px gap between the two navs */
+    z-index: 999
+    
+}
+
+/* You would then need to adjust your main content's margin-left further */
+main {
+    padding: 20px;
+    margin-left: 430px; /* 200px (nav) + 200px (side-nav) + 30px (gap) = 430px */
+}
+
+
+/* Button styles - enhanced */
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 5px 0;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.btn-primary {
+    background: #ff8fab;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #fb6f92;
+    transform: translateY(-1px);
+}
+
+.btn-success {
+    background: #28a745;
+    color: white;
+}
+
+.btn-success:hover {
+    background: #218838;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+    transform: translateY(-1px);
+}
+
+/* Error message styling */
+.error-message {
+    text-align: center;
+    padding: 50px;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    color: #721c24;
+    margin: 20px;
+}
+
+.error-message h2 {
+    color: #721c24;
+    margin-top: 0;
+}
+
+.error-message a {
+    color: #721c24;
+    font-weight: bold;
+}
+
+/* Appointment Table */
+.appointment-table .slot-taken {
+    background-color: #f8d7da !important;
+    color: #721c24;
+}
+
+.appointment-table .slot-available {
+    background-color: #d4edda !important;
+    color: #155724;
+}
+
+/* User Card */
+.user-card {
+    background-color: #fff;
+    border: 1px solid #ffc2d1;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: auto;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.user-card h2 {
+    margin-top: 0;
+    text-align: center;
+    color: #fb6f92;
+}
+
+.user-card .city {
+    text-align: center;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Messages */
+.message-item {
+    background-color: #fff;
+    border: 1px solid #ffc2d1;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 15px;
+}
+
+.message-item.unread {
+    border-left: 5px solid #fb6f92;
+}
+
+/* Notifications */
+.confirmation-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+/* Footer */
+footer {
+    background-color: #fb6f92;
+    color: #ffe5ec;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    /* Navigation */
+    nav {
+        position: static; /* Remove fixed positioning on smaller screens */
+        width: 100%;
+        height: auto;
+        box-shadow: none;
+    }
+
+    nav ul {
+        flex-direction: row; /* Make navigation horizontal on smaller screens */
+        justify-content: space-around;
+    }
+    
+    nav li {
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+    
+    /* Main Content */
+    main {
+        margin-left: 0; /* Remove margin on smaller screens */
+    }
+
+    /* Tables */
+    .results-table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    /* Flat detail page */
+    .flat-detail-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .flatcard {
+        flex-direction: column;
+    }
+    
+    .flat-photos {
+        flex: none;
+    }
+    
+    .marketing-info,
+    .side-navigation {
+        flex: none;
+        order: -1; /* Move to top on mobile */
+    }
+    
+    /* Buttons */
+    .btn {
+        padding: 12px 15px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+    
+    .flat-detail-container {
+        padding: 5px;
+    }
+    
+    .flatcard {
+        padding: 15px;
+    }
+    
+    .marketing-info,
+    .side-navigation {
+        padding: 10px;
+    }
+}
+
+
