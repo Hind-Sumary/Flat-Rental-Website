@@ -6,6 +6,8 @@ This repository contains the full-stack implementation of the 'Birzeit Flat Rent
 
 The Project had no restriction for the main color palette so you would notice a unique and creative color palette, notably incorporating pinkish tones (my favourite color). It caters to three distinct user types: Regular Customers, Flat Owners, and Managers, each with tailored functionalities to ensure a seamless and secure experience.
 
+The course Project specified that every deliverable must be a PHP file that contains the page’s HTML inline. For that reason you’ll see mostly .php files in this repo — but those files contain the actual HTML pages (templated and mixed with PHP logic) rather than separate .html files. This structure was used to meet the assignment requirements while keeping each page self-contained.
+
 ## Features
 
 ### General / Public Access Features
